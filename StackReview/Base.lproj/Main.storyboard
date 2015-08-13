@@ -36,9 +36,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="DhE-aG-cLN">
-                                <rect key="frame" x="0.0" y="64" width="600" height="268"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2f-Z6-LCb" userLabel="Content Container">
                                 <rect key="frame" x="0.0" y="332" width="600" height="268"/>
                                 <subviews>
@@ -91,6 +88,9 @@
                                     <constraint firstItem="SEX-vS-Pwd" firstAttribute="top" secondItem="rg6-ZP-iH9" secondAttribute="bottom" constant="10" id="ylo-y8-K3v"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="DhE-aG-cLN">
+                                <rect key="frame" x="0.0" y="64" width="600" height="268"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -99,10 +99,33 @@
                             <constraint firstItem="DhE-aG-cLN" firstAttribute="height" secondItem="O2f-Z6-LCb" secondAttribute="height" id="I6I-Uc-d52"/>
                             <constraint firstAttribute="trailing" secondItem="O2f-Z6-LCb" secondAttribute="trailing" id="J3n-ar-q44"/>
                             <constraint firstItem="DhE-aG-cLN" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="QZb-9l-ECL"/>
+                            <constraint firstItem="O2f-Z6-LCb" firstAttribute="leading" secondItem="DhE-aG-cLN" secondAttribute="trailing" constant="24" id="QcY-lV-usH">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="O2f-Z6-LCb" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="Sal-27-dBS"/>
                             <constraint firstItem="DhE-aG-cLN" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="Txp-4M-dHn"/>
+                            <constraint firstItem="DhE-aG-cLN" firstAttribute="width" secondItem="O2f-Z6-LCb" secondAttribute="width" id="ed0-8w-BJB"/>
                             <constraint firstAttribute="trailing" secondItem="DhE-aG-cLN" secondAttribute="trailing" id="ozI-MV-wNf"/>
+                            <constraint firstItem="O2f-Z6-LCb" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="uoY-yW-5W5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ed0-8w-BJB"/>
+                                <exclude reference="QcY-lV-usH"/>
+                                <exclude reference="uoY-yW-5W5"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="I6I-Uc-d52"/>
+                                <include reference="ed0-8w-BJB"/>
+                                <exclude reference="ozI-MV-wNf"/>
+                                <exclude reference="7tc-hf-Qa5"/>
+                                <include reference="QcY-lV-usH"/>
+                                <exclude reference="Sal-27-dBS"/>
+                                <include reference="uoY-yW-5W5"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="mOI-FS-AaM"/>
