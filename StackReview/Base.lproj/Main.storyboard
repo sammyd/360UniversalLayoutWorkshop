@@ -215,8 +215,22 @@
                     <view key="view" contentMode="scaleToFill" id="eWp-El-gqf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="sis-w5-RaP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sis-w5-RaP" firstAttribute="top" secondItem="eWp-El-gqf" secondAttribute="top" id="RRi-yW-lbN"/>
+                            <constraint firstItem="W0t-mM-Gfl" firstAttribute="top" secondItem="sis-w5-RaP" secondAttribute="bottom" id="TIP-Ee-FLY"/>
+                            <constraint firstAttribute="trailing" secondItem="sis-w5-RaP" secondAttribute="trailing" id="eQ1-VP-6qX"/>
+                            <constraint firstItem="sis-w5-RaP" firstAttribute="leading" secondItem="eWp-El-gqf" secondAttribute="leading" id="vaz-mw-aEV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="sis-w5-RaP" id="cEu-Dm-sUe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53q-4S-cfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

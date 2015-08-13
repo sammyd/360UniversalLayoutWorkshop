@@ -24,8 +24,42 @@ import UIKit
 
 class AboutViewController: UIViewController {
   
+  @IBOutlet weak var backgroundImageView: UIImageView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    configureView()
+  }
+}
+
+
+extension AboutViewController {
+  override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    let image = imageForAspectRatio(size.width / size.height)
+    
+    coordinator.animateAlongsideTransition({
+      context in
+      // Create a transition and match the context's duration
+      let transition = CATransition()
+      transition.duration = context.transitionDuration()
+      
+      // Make it fade
+      transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      transition.type = kCATransitionFade
+      self.backgroundImageView.layer.addAnimation(transition, forKey: "Fade")
+      
+      // Set the new image
+      self.backgroundImageView.image = image
+      }, completion: nil)
   }
   
+  
+  private func configureView() {
+    let aspectRatio = view.bounds.size.width / view.bounds.size.height
+    self.backgroundImageView.image = imageForAspectRatio(aspectRatio)
+  }
+  
+  private func imageForAspectRatio(aspectRatio : CGFloat) -> UIImage? {
+    return UIImage(named: aspectRatio > 1 ? "pancake3" : "placeholder")
+  }
 }
