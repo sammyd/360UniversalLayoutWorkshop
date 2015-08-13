@@ -27,15 +27,6 @@ class MasterViewController: UITableViewController {
   @IBOutlet weak var showHideDetailsButton: UIBarButtonItem!
   
   var pancakeHouses = [PancakeHouse]()
-  private var detailsHidden : Bool = true {
-    didSet {
-      for cell in tableView.visibleCells {
-        if let cell = cell as? PancakeHouseTableViewCell where cell.showExtraDetails == detailsHidden {
-          cell.animateShowExtraDetails(!detailsHidden)
-        }
-      }
-    }
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -82,23 +73,11 @@ class MasterViewController: UITableViewController {
     let pancakeHouse = pancakeHouses[indexPath.row]
     if let cell = cell as? PancakeHouseTableViewCell {
       cell.pancakeHouse = pancakeHouse
-      cell.showExtraDetails = !detailsHidden
     } else {
       cell.textLabel?.text = pancakeHouse.name
     }
     
     return cell
   }
-  
-  // MARK: - Button Handling
-  @IBAction func handleShowHideDetailsTapped(sender: AnyObject) {
-    if detailsHidden {
-      showHideDetailsButton.title = "Hide Detail"
-    } else {
-      showHideDetailsButton.title = "Show Detail"
-    }
-    detailsHidden = !detailsHidden
-  }
-  
 }
 

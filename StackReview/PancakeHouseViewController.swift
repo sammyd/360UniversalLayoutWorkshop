@@ -57,34 +57,9 @@ class PancakeHouseViewController : UIViewController {
     super.viewDidLoad()
     self.configureView()
   }
-  
-  @IBAction func handleShowDetailsButtonPressed(sender: UIButton) {
-    if detailsLabel.hidden {
-      animateView(detailsLabel, toHidden: false)
-      showDetailsButton.setTitle("Hide Details", forState: .Normal)
-    } else {
-      animateView(detailsLabel, toHidden: true)
-      showDetailsButton.setTitle("Show Details", forState: .Normal)
-    }
-  }
-  
-  @IBAction func handleShowMapButtonPressed(sender: UIButton) {
-    if mapView.hidden {
-      animateView(mapView, toHidden: false)
-      showMapButton.setTitle("Hide Map", forState: .Normal)
-    } else {
-      animateView(mapView, toHidden: true)
-      showMapButton.setTitle("Show Map", forState: .Normal)
-    }
-  }
+}
 
-  private func animateView(view: UIView, toHidden hidden: Bool) {
-    UIView.animateWithDuration(0.8, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 10.0, options: UIViewAnimationOptions(), animations: { () -> Void in
-      view.hidden = hidden
-      }, completion: nil)
-  }
-  
-  
+extension PancakeHouseViewController {
   private func centreMap(map: MKMapView?, atPosition position: CLLocationCoordinate2D?) {
     guard let map = map,
       let position = position else {
@@ -103,8 +78,5 @@ class PancakeHouseViewController : UIViewController {
     let annotation = MKPointAnnotation()
     annotation.coordinate = position
     map.addAnnotation(annotation)
-    
   }
-
 }
-

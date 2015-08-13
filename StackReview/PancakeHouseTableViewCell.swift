@@ -29,7 +29,6 @@ class PancakeHouseTableViewCell: UITableViewCell {
   @IBOutlet weak var ratingImage: UIImageView!
   @IBOutlet weak var cityLabel: UILabel!
   @IBOutlet weak var priceGuideLabel: UILabel!
-  @IBOutlet weak var extraDetailStackView: UIStackView!
   
   var pancakeHouse : PancakeHouse? {
     didSet {
@@ -40,18 +39,6 @@ class PancakeHouseTableViewCell: UITableViewCell {
         cityLabel?.text = pancakeHouse.city
         priceGuideLabel?.text = "\(pancakeHouse.priceGuide)"
       }
-    }
-  }
-  
-  var showExtraDetails : Bool = false {
-    didSet {
-      extraDetailStackView.hidden = !showExtraDetails
-    }
-  }
-  
-  func animateShowExtraDetails(show: Bool) {
-    UIView.animateWithDuration(1.0) {
-      self.showExtraDetails = show
     }
   }
 }
