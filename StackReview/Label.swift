@@ -22,7 +22,15 @@
 
 import UIKit
 
+@IBDesignable
 class MultilineLabelThatWorks : UILabel {
+  @IBInspectable
+  var respectMargins : Bool = false {
+    didSet {
+      setNeedsDisplay()
+    }
+  }
+  
   override func layoutSubviews() {
     super.layoutSubviews()
     preferredMaxLayoutWidth = bounds.width
@@ -30,13 +38,23 @@ class MultilineLabelThatWorks : UILabel {
   }
   
   override func textRectForBounds(bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
-    var rect = layoutMargins.apply(bounds)
-    rect = super.textRectForBounds(rect, limitedToNumberOfLines: numberOfLines)
-    return layoutMargins.inverse.apply(rect)
+    if respectMargins {
+      var rect = layoutMargins.apply(bounds)
+      rect = super.textRectForBounds(rect, limitedToNumberOfLines: numberOfLines)
+      return layoutMargins.inverse.apply(rect)
+    } else {
+      return super.textRectForBounds(bounds, limitedToNumberOfLines: numberOfLines)
+    }
   }
   
   override func drawTextInRect(rect: CGRect) {
-    super.drawTextInRect(layoutMargins.apply(rect))
+    let newRect : CGRect
+    if respectMargins {
+      newRect = layoutMargins.apply(rect)
+    } else {
+      newRect = rect
+    }
+    super.drawTextInRect(newRect)
   }
 }
 
