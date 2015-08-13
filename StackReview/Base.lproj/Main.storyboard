@@ -164,24 +164,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="WJ1-Tp-ogu" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="WCw-Qf-5nD" customClass="PancakeHouseTableViewCell" customModule="StackReview" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="600" height="119"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="118.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WJ1-Tp-ogu">
-                                            <rect key="frame" x="15" y="0.0" width="550" height="118.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="U1i-3n-75F">
+                                            <rect key="frame" x="15" y="8" width="551" height="102.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder_thumb" translatesAutoresizingMaskIntoConstraints="NO" id="913-Zv-05B">
+                                                    <rect key="frame" x="0.0" y="1.5" width="100" height="100"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" fixedFrame="YES" text="PancakeHouseName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONh-dS-3SR">
+                                                    <rect key="frame" x="105" y="36.5" width="391" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pancake_rate_5_small" translatesAutoresizingMaskIntoConstraints="NO" id="VDG-8o-IUJ">
+                                                    <rect key="frame" x="501" y="26.5" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="U1i-3n-75F" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" id="Xwv-9N-wLP"/>
+                                        <constraint firstItem="U1i-3n-75F" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" id="jaO-88-R74"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="U1i-3n-75F" secondAttribute="trailing" id="rZK-Xc-rLM"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="U1i-3n-75F" secondAttribute="bottom" id="y0i-aw-nq5"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="nameLabel" destination="ONh-dS-3SR" id="tKN-J6-D31"/>
+                                    <outlet property="pancakeImage" destination="913-Zv-05B" id="D8o-Ug-Cpk"/>
+                                    <outlet property="ratingImage" destination="VDG-8o-IUJ" id="E5N-kH-a4t"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
@@ -259,7 +278,9 @@
     </scenes>
     <resources>
         <image name="pancake_rate_5" width="100" height="100"/>
+        <image name="pancake_rate_5_small" width="50" height="50"/>
         <image name="placeholder" width="1024" height="683"/>
+        <image name="placeholder_thumb" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
