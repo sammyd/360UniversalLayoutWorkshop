@@ -25,6 +25,8 @@ import UIKit
 class AboutViewController: UIViewController {
   
   @IBOutlet weak var backgroundImageView: UIImageView!
+  @IBOutlet weak var containerStackView: UIStackView!
+  private var copyrightStackView: UIStackView?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -62,4 +64,42 @@ extension AboutViewController {
   private func imageForAspectRatio(aspectRatio : CGFloat) -> UIImage? {
     return UIImage(named: aspectRatio > 1 ? "pancake3" : "placeholder")
   }
+}
+
+
+
+extension AboutViewController {
+  @IBAction func handleShowHideCopyrightTapped(sender: AnyObject) {
+    if copyrightStackView != .None {
+      UIView.animateWithDuration(0.8, animations: {
+          self.copyrightStackView?.hidden = true
+        }, completion: { _ in
+          self.copyrightStackView?.removeFromSuperview()
+          self.copyrightStackView = nil
+      })
+    } else {
+      copyrightStackView = createCopyrightStackView()
+      copyrightStackView?.hidden = true
+      containerStackView.addArrangedSubview(copyrightStackView!)
+      UIView.animateWithDuration(0.8) {
+        self.copyrightStackView?.hidden = false
+      }
+    }
+  }
+  
+  private func createCopyrightStackView() -> UIStackView {
+    let imageView = UIImageView(image: UIImage(named: "rw_logo"))
+    imageView.contentMode = .ScaleAspectFit
+    
+    let label = UILabel()
+    label.text = "© Razeware 2015"
+    
+    let stackView = UIStackView(arrangedSubviews: [imageView, label])
+    stackView.axis = .Horizontal
+    stackView.alignment = .Center
+    stackView.distribution = .FillEqually
+    
+    return stackView
+  }
+  
 }

@@ -259,17 +259,57 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="sis-w5-RaP">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0RH-9v-gmy">
+                                <rect key="frame" x="20" y="40" width="560" height="279"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="giX-uB-kJd">
+                                    <rect key="frame" x="0.0" y="0.0" width="560" height="279"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HPC-lG-D3C">
+                                            <rect key="frame" x="155" y="8" width="250" height="263"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="StackReview" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYE-YU-CkO">
+                                                    <rect key="frame" x="32.5" y="0.0" width="185.5" height="42"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pancake_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Hhx-7I-J6H">
+                                                    <rect key="frame" x="0.0" y="47" width="250" height="181"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfU-DC-mWJ">
+                                                    <rect key="frame" x="52" y="233" width="146" height="30"/>
+                                                    <state key="normal" title="Show/Hide Copyright"/>
+                                                    <connections>
+                                                        <action selector="handleShowHideCopyrightTapped:" destination="M4M-oT-X8b" eventType="touchUpInside" id="zS5-mc-J3F"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="HPC-lG-D3C" firstAttribute="top" secondItem="giX-uB-kJd" secondAttribute="topMargin" id="EmW-mm-bhS"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="HPC-lG-D3C" secondAttribute="bottom" id="IDd-R3-AGV"/>
+                                        <constraint firstItem="HPC-lG-D3C" firstAttribute="centerX" secondItem="giX-uB-kJd" secondAttribute="centerX" id="SkG-an-Tdi"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0RH-9v-gmy" firstAttribute="top" secondItem="8ay-dw-mIO" secondAttribute="bottom" constant="20" id="NYF-0N-wu8"/>
                             <constraint firstItem="sis-w5-RaP" firstAttribute="top" secondItem="eWp-El-gqf" secondAttribute="top" id="RRi-yW-lbN"/>
                             <constraint firstItem="W0t-mM-Gfl" firstAttribute="top" secondItem="sis-w5-RaP" secondAttribute="bottom" id="TIP-Ee-FLY"/>
                             <constraint firstAttribute="trailing" secondItem="sis-w5-RaP" secondAttribute="trailing" id="eQ1-VP-6qX"/>
+                            <constraint firstItem="0RH-9v-gmy" firstAttribute="leading" secondItem="eWp-El-gqf" secondAttribute="leadingMargin" id="ide-gD-bva"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0RH-9v-gmy" secondAttribute="trailing" id="uda-u6-jws"/>
                             <constraint firstItem="sis-w5-RaP" firstAttribute="leading" secondItem="eWp-El-gqf" secondAttribute="leading" id="vaz-mw-aEV"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="sis-w5-RaP" id="cEu-Dm-sUe"/>
+                        <outlet property="containerStackView" destination="HPC-lG-D3C" id="aZk-OR-qmd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53q-4S-cfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -298,6 +338,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pancake_logo" width="250" height="181"/>
         <image name="pancake_rate_5" width="100" height="100"/>
         <image name="pancake_rate_5_small" width="50" height="50"/>
         <image name="placeholder" width="1024" height="683"/>
