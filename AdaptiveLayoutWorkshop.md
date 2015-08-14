@@ -108,6 +108,11 @@ bit.do/360layout
 
 ![inline](assets/size_class_table.png)
 
+---
+## Multi-tasking
+
+![fit](assets/multitasking-size-classes.png)
+
 
 ---
 
