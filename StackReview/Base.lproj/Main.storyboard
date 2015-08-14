@@ -36,16 +36,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qRs-X3-ixW">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qRs-X3-ixW">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="DhE-aG-cLN">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="DhE-aG-cLN">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="268"/>
+                                        <variation key="heightClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="261.5"/>
+                                        </variation>
                                     </imageView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O2f-Z6-LCb" userLabel="Content Container">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2f-Z6-LCb" userLabel="Content Container">
                                         <rect key="frame" x="0.0" y="268" width="600" height="268"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="10e-MG-STG">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="10e-MG-STG">
                                                 <rect key="frame" x="8" y="8" width="584" height="252"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PancakeHouseName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fS4-Oc-MBx">
@@ -57,7 +60,7 @@
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rg6-ZP-iH9" userLabel="Yellow Bar">
                                                         <rect key="frame" x="0.0" y="52" width="584" height="116"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Glb-ZO-N82">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Glb-ZO-N82">
                                                                 <rect key="frame" x="8" y="8" width="568" height="100"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3G-5j-WA1">
@@ -80,13 +83,25 @@
                                                             <constraint firstItem="Glb-ZO-N82" firstAttribute="bottom" secondItem="rg6-ZP-iH9" secondAttribute="bottomMargin" id="t3f-15-Zgr"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" text="Details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEX-vS-Pwd" customClass="MultilineLabelThatWorks" customModule="StackReview" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="172" width="584" height="80"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" text="Details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEX-vS-Pwd" customClass="MultilineLabelThatWorks" customModule="StackReview" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="172" width="584" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular" fixedFrame="YES">
+                                                            <rect key="frame" x="0.0" y="172" width="584" height="21.5"/>
+                                                        </variation>
                                                     </label>
+                                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="80n-2x-i4u">
+                                                        <rect key="frame" x="0.0" y="197.5" width="584" height="54.5"/>
+                                                        <variation key="heightClass=regular" misplaced="YES">
+                                                            <rect key="frame" x="0.0" y="197.5" width="584" height="261"/>
+                                                        </variation>
+                                                    </mapView>
                                                 </subviews>
+                                                <variation key="heightClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="8" y="8" width="584" height="458.5"/>
+                                                </variation>
                                             </stackView>
                                         </subviews>
                                         <constraints>
@@ -95,9 +110,25 @@
                                             <constraint firstItem="10e-MG-STG" firstAttribute="leading" secondItem="O2f-Z6-LCb" secondAttribute="leadingMargin" id="pBj-jE-Z5b"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="10e-MG-STG" secondAttribute="bottom" id="u1Y-GV-ibc"/>
                                         </constraints>
+                                        <variation key="heightClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="261.5" width="600" height="474.5"/>
+                                        </variation>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="DhE-aG-cLN" firstAttribute="height" secondItem="80n-2x-i4u" secondAttribute="height" id="k35-vj-p7X"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="k35-vj-p7X"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=compact" axis="horizontal"/>
+                                <variation key="heightClass=regular" distribution="fill">
+                                    <mask key="constraints">
+                                        <include reference="k35-vj-p7X"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -113,6 +144,7 @@
                     <connections>
                         <outlet property="detailsLabel" destination="SEX-vS-Pwd" id="0mL-kX-w8P"/>
                         <outlet property="imageView" destination="DhE-aG-cLN" id="QDP-GZ-08L"/>
+                        <outlet property="mapView" destination="80n-2x-i4u" id="4LD-gm-rWl"/>
                         <outlet property="nameLabel" destination="fS4-Oc-MBx" id="fhl-vL-vYY"/>
                         <outlet property="priceGuideLabel" destination="g3G-5j-WA1" id="Kil-vY-kL1"/>
                         <outlet property="ratingImage" destination="7vk-Hr-0PS" id="KAk-T9-0BH"/>
