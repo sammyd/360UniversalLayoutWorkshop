@@ -134,6 +134,19 @@ bit.do/360layout
 
 ---
 
+![fit](assets/stackview_motivation.png)
+
+---
+
+# Stack View Properties
+
+- Axis
+- Alignment
+- Spacing
+- Distribution
+
+---
+
 ## Useful Links
 
 sam ⇄ [@iwantmyrealname](https://twitter.com/iwantmyrealname)
